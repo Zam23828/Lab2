@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm Mon Feb 17 10:54:26 2025
+AVRASM ver. 2.2.8  C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm Mon Feb 17 11:01:29 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
 C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm(9): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.inc'
@@ -1058,7 +1058,7 @@ C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2
 00000b 7179                      MITABLA: .db 0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x67, 0x77, 0x7C, 0x58, 0x5E, 0x79, 0x71  
                                  
                                  SETUP:
-00000c 940e 0060                 	CALL INIT_TMR0
+00000c 940e 005e                 	CALL INIT_TMR0
 00000e e800                      	LDI R16, (1 << CLKPCE)
 00000f 9300 0061                 	STS CLKPR, R16 // Habilitar cambio de clk
 000011 e007                      	LDI R16, 0b00000111 // factor de division 128
@@ -1083,61 +1083,60 @@ C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2
 000023 b948                      	OUT PORTC, COUNTER
 000024 b116                      	IN R17, PINC
 000025 9934                      	SBIC PINC, PC4
-000026 940e 003f                 	CALL DELAY1
+000026 940e 0041                 	CALL DELAY1
 000028 b126                      	IN R18, PINC
 000029 9935                      	SBIC PINC, PC5
-00002a 940e 0046                 	CALL DELAY2
+00002a 940e 0048                 	CALL DELAY2
 00002c b305                      	IN R16, TIFR0
 00002d ff01                      	SBRS R16, OCF0A // Salta si el bit 0 est "set" (TOV0 bit)?
 00002e cff3                      	RJMP LOOP // Reiniciar loop
 00002f 9aa9                      	SBI TIFR0, OCF0A // Limpiar bandera de "overflow"
 000030 9543                      	INC COUNTER
 000031 3140                      	CPI COUNTER, 16
-000032 f039                      	BREQ VOLVER
+000032 f049                      	BREQ VOLVER
 000033 982d                      	CBI PORTB, PB5
 000034 940e 0037                 	CALL ALARMA
 000036 cfeb                      	RJMP LOOP
                                  
                                  ALARMA:
-                                 	/*MOV R24, R21
-                                 	INC R24
-                                 	CP COUNTER, R24*/
-000037 1745                      	CP COUNTER, R21
-000038 f019                      	BREQ IGUAL
-000039 cfe8                      	RJMP LOOP
-                                 VOLVER:
-00003a e040                      	LDI COUNTER, 0
+000037 2f85                      	MOV R24, R21
+000038 9583                      	INC R24
+000039 1748                      	CP COUNTER, R24
+00003a f019                      	BREQ IGUAL
 00003b cfe6                      	RJMP LOOP
+                                 VOLVER:
+00003c e040                      	LDI COUNTER, 0
+00003d cfe4                      	RJMP LOOP
                                  IGUAL:
-00003c 9a2d                      	SBI PORTB, PB5
-00003d e040                      	LDI COUNTER,0
-00003e cfe3                      	RJMP LOOP
+00003e 9a2d                      	SBI PORTB, PB5
+00003f e040                      	LDI COUNTER,0
+000040 cfe1                      	RJMP LOOP
                                  
                                  	
                                  DELAY1:
-00003f e614                      	LDI R17, 0x64
+000041 e614                      	LDI R17, 0x64
                                  	D1:
-000040 951a                      		DEC R17
-000041 f7f1                      		BRNE D1
-000042 9934                      	SBIC PINC, PC4
-000043 cffb                      	RJMP DELAY1
-000044 940e 004d                 	CALL INCREMENTO
+000042 951a                      		DEC R17
+000043 f7f1                      		BRNE D1
+000044 9934                      	SBIC PINC, PC4
+000045 cffb                      	RJMP DELAY1
+000046 940e 004f                 	CALL INCREMENTO
                                  
                                  DELAY2:
-000046 e624                      	LDI R18, 0x64
+000048 e624                      	LDI R18, 0x64
                                  	D2:
-000047 952a                      		DEC R18
-000048 f7f1                      		BRNE D2
-000049 9935                      	SBIC PINC, PC5
-00004a cffb                      	RJMP DELAY2
-00004b 940e 0056                 	CALL DECREMENTO
+000049 952a                      		DEC R18
+00004a f7f1                      		BRNE D2
+00004b 9935                      	SBIC PINC, PC5
+00004c cffb                      	RJMP DELAY2
+00004d 940e 0056                 	CALL DECREMENTO
                                  
                                  
                                  INCREMENTO:
-00004d 9b34                      	SBIS PINC, PC4
-00004e 9508                      	RET
+                                 	/*SBIS PINC, PC4
+                                 	RET*/
 00004f 305f                      	CPI R21, 0x0F // COMPARA SI ES IGUAL
-000050 f071                      	BREQ PASAR
+000050 f061                      	BREQ PASAR
 000051 9553                      	INC R21
 000052 9631                      	ADIW Z, 1
 000053 9174                      	LPM	R23, Z
@@ -1147,29 +1146,29 @@ C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2
                                  
                                  
                                  DECREMENTO:
-000056 9b35                      	SBIS PINC, PC5
-000057 9508                      	RET
-000058 3050                      	CPI R21, 0x00 // COMPARA SI ES IGUAL
-000059 f029                      	BREQ PASAR
-00005a 955a                      	DEC R21
-00005b 9731                      	SBIW Z, 1
-00005c 9174                      	LPM	R23, Z
-00005d b97b                      	OUT PORTD, R23
-00005e cfc3                      	RJMP LOOP
+                                 	/*SBIS PINC, PC5
+                                 	RET*/
+000056 3050                      	CPI R21, 0x00 // COMPARA SI ES IGUAL
+000057 f029                      	BREQ PASAR
+000058 955a                      	DEC R21
+000059 9731                      	SBIW Z, 1
+00005a 9174                      	LPM	R23, Z
+00005b b97b                      	OUT PORTD, R23
+00005c cfc5                      	RJMP LOOP
                                  		
                                  PASAR:
-00005f cfc2                      	RJMP LOOP
+00005d cfc4                      	RJMP LOOP
                                  
                                  INIT_TMR0:
-000060 e000                      	LDI R16, 0
-000061 bd06                      	OUT TCNT0, R16
-000062 e90c                      	LDI R16, 156
-000063 bd07                      	OUT OCR0A, R16
-000064 e002                      	LDI R16, (1 << WGM01)  // Modo de Operación en CTC
-000065 bd04                      	OUT TCCR0A, R16
-000066 e005                      	LDI R16, (1<<CS02) | (1<<CS00)
-000067 bd05                      	OUT TCCR0B, R16 // Setear prescaler del TIMER 0 a 1024
-000068 9508                      	RET
+00005e e000                      	LDI R16, 0
+00005f bd06                      	OUT TCNT0, R16
+000060 e90c                      	LDI R16, 156
+000061 bd07                      	OUT OCR0A, R16
+000062 e002                      	LDI R16, (1 << WGM01)  // Modo de Operación en CTC
+000063 bd04                      	OUT TCCR0A, R16
+000064 e005                      	LDI R16, (1<<CS02) | (1<<CS00)
+000065 bd05                      	OUT TCCR0B, R16 // Setear prescaler del TIMER 0 a 1024
+000066 9508                      	RET
 
 
 RESOURCE USE INFORMATION
@@ -1190,9 +1189,9 @@ counted separately from r26..r31 here.
 x  :   0 y  :   0 z  :   5 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
 r13:   0 r14:   0 r15:   0 r16:  18 r17:   7 r18:   3 r19:   2 r20:   8 
-r21:   6 r22:   0 r23:   8 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
+r21:   6 r22:   0 r23:   8 r24:   3 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   1 r31:   1 
-Registers used: 10 out of 35 (28.6%)
+Registers used: 11 out of 35 (31.4%)
 
 "ATmega328P" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   1 and   :   0 
@@ -1204,12 +1203,12 @@ brvs  :   0 bset  :   0 bst   :   0 call  :   6 cbi   :   1 cbr   :   0
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   1 cpc   :   0 
 cpi   :   3 cpse  :   0 dec   :   3 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   3 inc   :   2 jmp   :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   3 inc   :   3 jmp   :   0 
 ld    :   0 ldd   :   0 ldi   :  21 lds   :   0 lpm   :   6 lsl   :   0 
-lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+lsr   :   0 mov   :   1 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :  14 pop   :   0 
-push  :   0 rcall :   0 ret   :   3 reti  :   0 rjmp  :  10 rol   :   0 
-ror   :   0 sbc   :   0 sbci  :   0 sbi   :   2 sbic  :   4 sbis  :   2 
+push  :   0 rcall :   0 ret   :   1 reti  :   0 rjmp  :  10 rol   :   0 
+ror   :   0 sbc   :   0 sbci  :   0 sbi   :   2 sbic  :   4 sbis  :   0 
 sbiw  :   1 sbr   :   0 sbrc  :   0 sbrs  :   1 sec   :   0 seh   :   0 
 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   2 
@@ -1219,7 +1218,7 @@ Instructions used: 21 out of 113 (18.6%)
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000d2    194     16    210   32768   0.6%
+[.cseg] 0x000000 0x0000ce    190     16    206   32768   0.6%
 [.dseg] 0x000100 0x000100      0      0      0    2048   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 

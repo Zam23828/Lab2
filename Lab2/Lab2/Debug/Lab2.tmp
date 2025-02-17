@@ -25,17 +25,17 @@
  <LABELS>
   <MITABLA><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>20</LINE></MITABLA>
   <SETUP><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>22</LINE></SETUP>
-  <INIT_TMR0><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>125</LINE></INIT_TMR0>
+  <INIT_TMR0><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>124</LINE></INIT_TMR0>
   <LOOP><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>43</LINE></LOOP>
-  <DELAY1><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>79</LINE></DELAY1>
-  <DELAY2><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>88</LINE></DELAY2>
-  <VOLVER><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>70</LINE></VOLVER>
+  <DELAY1><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>78</LINE></DELAY1>
+  <DELAY2><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>87</LINE></DELAY2>
+  <VOLVER><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>69</LINE></VOLVER>
   <ALARMA><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>63</LINE></ALARMA>
-  <IGUAL><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>73</LINE></IGUAL>
-  <D1><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>81</LINE></D1>
-  <INCREMENTO><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>98</LINE></INCREMENTO>
-  <D2><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>90</LINE></D2>
-  <DECREMENTO><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>111</LINE></DECREMENTO>
-  <PASAR><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>122</LINE></PASAR>
+  <IGUAL><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>72</LINE></IGUAL>
+  <D1><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>80</LINE></D1>
+  <INCREMENTO><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>97</LINE></INCREMENTO>
+  <D2><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>89</LINE></D2>
+  <DECREMENTO><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>110</LINE></DECREMENTO>
+  <PASAR><FILE>C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm</FILE><LINE>121</LINE></PASAR>
  </LABELS>
 </ASSEMBLER_INFO>
