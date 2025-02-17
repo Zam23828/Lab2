@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm Mon Feb 17 11:01:29 2025
+AVRASM ver. 2.2.8  C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm Mon Feb 17 11:03:51 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
 C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm(9): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.inc'
@@ -1079,37 +1079,37 @@ C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2
 000021 9174                      	LPM R23, Z
                                  
                                  LOOP:
-000022 b97b                      	OUT PORTD, R23
-000023 b948                      	OUT PORTC, COUNTER
-000024 b116                      	IN R17, PINC
-000025 9934                      	SBIC PINC, PC4
-000026 940e 0041                 	CALL DELAY1
-000028 b126                      	IN R18, PINC
-000029 9935                      	SBIC PINC, PC5
-00002a 940e 0048                 	CALL DELAY2
-00002c b305                      	IN R16, TIFR0
-00002d ff01                      	SBRS R16, OCF0A // Salta si el bit 0 est "set" (TOV0 bit)?
-00002e cff3                      	RJMP LOOP // Reiniciar loop
-00002f 9aa9                      	SBI TIFR0, OCF0A // Limpiar bandera de "overflow"
-000030 9543                      	INC COUNTER
-000031 3140                      	CPI COUNTER, 16
-000032 f049                      	BREQ VOLVER
-000033 982d                      	CBI PORTB, PB5
-000034 940e 0037                 	CALL ALARMA
-000036 cfeb                      	RJMP LOOP
+000022 b948                      	OUT PORTC, COUNTER
+000023 b116                      	IN R17, PINC
+000024 9934                      	SBIC PINC, PC4
+000025 940e 0041                 	CALL DELAY1
+000027 b126                      	IN R18, PINC
+000028 9935                      	SBIC PINC, PC5
+000029 940e 0048                 	CALL DELAY2
+00002b b305                      	IN R16, TIFR0
+00002c ff01                      	SBRS R16, OCF0A // Salta si el bit 0 est "set" (TOV0 bit)?
+00002d cff4                      	RJMP LOOP // Reiniciar loop
+00002e 9aa9                      	SBI TIFR0, OCF0A // Limpiar bandera de "overflow"
+00002f 9543                      	INC COUNTER
+000030 3140                      	CPI COUNTER, 16
+000031 f049                      	BREQ VOLVER
+000032 982d                      	CBI PORTB, PB5
+000033 940e 0036                 	CALL ALARMA
+000035 cfec                      	RJMP LOOP
                                  
                                  ALARMA:
-000037 2f85                      	MOV R24, R21
-000038 9583                      	INC R24
-000039 1748                      	CP COUNTER, R24
-00003a f019                      	BREQ IGUAL
-00003b cfe6                      	RJMP LOOP
+000036 2f85                      	MOV R24, R21
+000037 9583                      	INC R24
+000038 1748                      	CP COUNTER, R24
+000039 f019                      	BREQ IGUAL
+00003a cfe7                      	RJMP LOOP
                                  VOLVER:
-00003c e040                      	LDI COUNTER, 0
-00003d cfe4                      	RJMP LOOP
+00003b e040                      	LDI COUNTER, 0
+00003c cfe5                      	RJMP LOOP
                                  IGUAL:
-00003e 9a2d                      	SBI PORTB, PB5
-00003f e040                      	LDI COUNTER,0
+00003d 9a2d                      	SBI PORTB, PB5
+00003e e040                      	LDI COUNTER,0
+00003f b97b                      	OUT PORTD, R23
 000040 cfe1                      	RJMP LOOP
                                  
                                  	

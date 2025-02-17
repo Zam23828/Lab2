@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm Mon Feb 17 11:01:29 2025
+AVRASM ver. 2.2.8  C:\Users\nicoz\OneDrive\Documents\UVG\UVG\Tercer año\Primer Semestre\micros\Lab2\Lab2\Lab2\Lab2\main.asm Mon Feb 17 11:03:51 2025
 
 
 EQU  SIGNATURE_000 0000001e
@@ -702,9 +702,9 @@ CSEG INIT_TMR0    0000005e
 CSEG LOOP         00000022
 CSEG DELAY1       00000041
 CSEG DELAY2       00000048
-CSEG VOLVER       0000003c
-CSEG ALARMA       00000037
-CSEG IGUAL        0000003e
+CSEG VOLVER       0000003b
+CSEG ALARMA       00000036
+CSEG IGUAL        0000003d
 CSEG D1           00000042
 CSEG INCREMENTO   0000004f
 CSEG D2           00000049
