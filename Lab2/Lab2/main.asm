@@ -24,7 +24,7 @@ SETUP:
 	LDI R16, (1 << CLKPCE)
 	STS CLKPR, R16 // Habilitar cambio de clk
 	LDI R16, 0b00000111 // factor de division 128
-	STS CLKPR, R16 // Frecuencia de 1MHz
+	STS CLKPR, R16 // Frecuencia de 125kHz
 	LDI COUNTER, 0x00 // Salidas leds
 	LDI R17, 0b0000_1111
 	OUT DDRC, R17
